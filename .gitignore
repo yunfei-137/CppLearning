@@ -1,0 +1,11 @@
+# .gitignore内容
+*.exe
+*.o
+*.obj
+*.pdb
+*.ilk
+build/
+bin/
+obj/
+Debug/
+.vs/
