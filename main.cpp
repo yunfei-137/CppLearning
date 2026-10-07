@@ -136,19 +136,19 @@
 // 为了计算 BMI该程序以英寸的方式指出用户的身高（1 英尺为 12 英寸），并将以英寸为单位的身高转换为以米为单位的身高（1英寸=0.0254米）。
 // 然后，将以磅为单位的体重转换为以千克为单位的体重（1千克=2.2磅）。
 // 最后，计算相应的 BMI ———体重（千克）除以身高（米）的平方。用符号常量表示各种转换因子。
-#include <math.h>
-using namespace std;
-int main(void)
-{
-    int foot_height = 0, inch_height = 0, pound_weight = 0;
-    cout << "Please enter your height(imperial, like 2 feet, 2 inches): " << endl;
-    cin >> foot_height;
-    cin >> inch_height;
-    cout << "Please enter your weight(pounds): " << endl;
-    cin >> pound_weight;
-    cout << "Your BMI is: " << (pound_weight/2.2) / pow(((foot_height * 12 + inch_height) * 0.0254) , 2) << endl;
-    return 0;
-}
+// #include <math.h>
+// using namespace std;
+// int main(void)
+// {
+//     int foot_height = 0, inch_height = 0, pound_weight = 0;
+//     cout << "Please enter your height(imperial, like 2 feet, 2 inches): " << endl;
+//     cin >> foot_height;
+//     cin >> inch_height;
+//     cout << "Please enter your weight(pounds): " << endl;
+//     cin >> pound_weight;
+//     cout << "Your BMI is: " << (pound_weight/2.2) / pow(((foot_height * 12 + inch_height) * 0.0254) , 2) << endl;
+//     return 0;
+// }
 
 // 3.7.3 编写一个程序，要求用户以度、分、秒的方式输入一个纬度，然后以度为单位显示该纬度。1度为60分，1分等于60秒，请以符号常量的方式表示这些值。
 // 对于每个输入值，应使用一个单独的变量去存储他。
@@ -157,6 +157,20 @@ int main(void)
 //  First, enter the degrees:
 //  Next, enter the minutes of arc:
 // 37 degrees, 51 minutes, 19 seconds = 37.8553 degrees
+using namespace std;
+int main(void)
+{
+    float lati_degree = 0.0, lati_minute = 0.0, lati_second = 0.0;
+    cout << "Please enter a latitude in degrees, minutes, and seconds: " << endl;
+    cout << "First, enter the degree: " << endl;
+    cin >> lati_degree;
+    cout << "Next, enter the minutes of arc: " << endl;
+    cin >> lati_minute;
+    cout << "Finally, enter the seconds of arc: " << endl;
+    cin >> lati_second;
+    printf("%f lati_degree, %f lati_minute, %f lati_second = %.4f degree", &lati_degree, &lati_minute, &lati_second, lati_degree / 1.0 + lati_minute / 60.0 + lati_second / 60.0 / 60.0);
+    return 0;
+}
 
 // 3.7.4 编写一个程序，要求用户以整数方式输入秒数（使用 long 或者 long long 变量存储），然后以天、小时、分钟和秒的方式显示这段时间。
 // 使用符号常量来表示每天有多少小时、每小时有多少分钟以及每分钟有多少秒。
