@@ -96,7 +96,6 @@
 //     return 0;
 // }
 
-
 // 2.7.7 编写一个程序，要求用户输入小时数和分钟数。在 main() 函数中，将这两个值传递给一个 void 函数，后者以下面这样的格式显示这两个值：
 // Enter the number of hours: 9
 // Enter the number of minutes: 28
@@ -122,22 +121,34 @@
 // }
 
 // 3.7.1 编写一个小程序，要求用户使用一个整数指出自己的身高（单位为英寸），然后将身高转换为英尺和英寸，该程序使用下划线字符来指示输入位置。另外，使用一个 const 符号常量来表示转换因子。
-using namespace std;
-const int HEIGHT = 12;
-int main(void)
-{
-    int my_height = 0;
-    cout<<"Please enter your height(integer inch): __";
-    cin>>my_height;
-    cout<<"Your height is "<<my_height<<" inches "<< "or "<<my_height/12<<" feet.";
-    return 0;
-}
+// using namespace std;
+// const int HEIGHT = 12;
+// int main(void)
+// {
+//     int my_height = 0;
+//     cout<<"Please enter your height(integer inch): __";
+//     cin>>my_height;
+//     cout<<"Your height is "<<my_height<<" inches "<< "or "<<my_height/12<<" feet.";
+//     return 0;
+// }
 
 // 3.7.2 编写一个小程序，要求以几英尺几英寸的方式输入其身高，并以磅为单位输入其体重。（使用3个变量来存储这些信息。）该程序报告其BMI（Body Mass Index，体重指数）。
 // 为了计算 BMI该程序以英寸的方式指出用户的身高（1 英尺为 12 英寸），并将以英寸为单位的身高转换为以米为单位的身高（1英寸=0.0254米）。
 // 然后，将以磅为单位的体重转换为以千克为单位的体重（1千克=2.2磅）。
 // 最后，计算相应的 BMI ———体重（千克）除以身高（米）的平方。用符号常量表示各种转换因子。
-
+#include <math.h>
+using namespace std;
+int main(void)
+{
+    int foot_height = 0, inch_height = 0, pound_weight = 0;
+    cout << "Please enter your height(imperial, like 2 feet, 2 inches): " << endl;
+    cin >> foot_height;
+    cin >> inch_height;
+    cout << "Please enter your weight(pounds): " << endl;
+    cin >> pound_weight;
+    cout << "Your BMI is: " << (pound_weight/2.2) / pow(((foot_height * 12 + inch_height) * 0.0254) , 2) << endl;
+    return 0;
+}
 
 // 3.7.3 编写一个程序，要求用户以度、分、秒的方式输入一个纬度，然后以度为单位显示该纬度。1度为60分，1分等于60秒，请以符号常量的方式表示这些值。
 // 对于每个输入值，应使用一个单独的变量去存储他。
@@ -152,4 +163,3 @@ int main(void)
 // 该程序的输出应与下面类似：
 //  Enter the number of seconds: 31600000
 //  31600000 seconds = 365 days, 17 hours, 46 minutes, 40 seconds
-
